@@ -56,12 +56,20 @@
 			children = (
 				BCD2E14221015DEB007746AE /* AppDelegate.swift */,
 				BCD2E14421015DEB007746AE /* ViewController.swift */,
+				BCD2E15421015E2B007746AE /* Supporting Files */,
+			);
+			path = "On the Map";
+			sourceTree = "<group>";
+		};
+		BCD2E15421015E2B007746AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				BCD2E14621015DEB007746AE /* Main.storyboard */,
 				BCD2E14921015DED007746AE /* Assets.xcassets */,
 				BCD2E14B21015DED007746AE /* LaunchScreen.storyboard */,
 				BCD2E14E21015DED007746AE /* Info.plist */,
 			);
-			path = "On the Map";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
