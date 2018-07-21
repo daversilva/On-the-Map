@@ -56,7 +56,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="LogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcF-2o-bSl"/>
+                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcF-2o-bSl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -79,7 +79,7 @@
                                             <color key="titleColor" red="0.0" green="0.63529411759999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="SignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wra-S4-7Yd"/>
+                                            <action selector="signUpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wra-S4-7Yd"/>
                                         </connections>
                                     </button>
                                 </subviews>

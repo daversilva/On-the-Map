@@ -18,10 +18,10 @@ class LoginViewController: UIViewController {
 
     }
     
-    @IBAction func LogIn(_ sender: UIButton) {
+    @IBAction func loginPressed(_ sender: UIButton) {
     }
     
-    @IBAction func SignUp(_ sender: UIButton) {
+    @IBAction func signUpPressed(_ sender: UIButton) {
     }
     
 }
