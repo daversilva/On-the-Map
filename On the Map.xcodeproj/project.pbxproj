@@ -12,6 +12,9 @@
 		BCD2E14A21015DED007746AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14921015DED007746AE /* Assets.xcassets */; };
 		BCD2E14D21015DED007746AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14B21015DED007746AE /* LaunchScreen.storyboard */; };
 		BCD2E15C2101634F007746AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2E15B2101634F007746AE /* LoginViewController.swift */; };
+		BCF447D321038B9A0004B540 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF447D221038B9A0004B540 /* UdacityClient.swift */; };
+		BCF447D521038BBF0004B540 /* UdacityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF447D421038BBF0004B540 /* UdacityConstants.swift */; };
+		BCF447D92103F0060004B540 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF447D82103F0060004B540 /* BorderedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		BCD2E14C21015DED007746AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCD2E14E21015DED007746AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD2E15B2101634F007746AE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BCF447D221038B9A0004B540 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
+		BCF447D421038BBF0004B540 /* UdacityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityConstants.swift; sourceTree = "<group>"; };
+		BCF447D82103F0060004B540 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		BCD2E15921016303007746AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BCF447D82103F0060004B540 /* BorderedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,8 +99,26 @@
 		BCD2E15A2101630E007746AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCF447D021038B520004B540 /* Clients */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BCF447D021038B520004B540 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				BCF447D121038B5F0004B540 /* Udacity */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		BCF447D121038B5F0004B540 /* Udacity */ = {
+			isa = PBXGroup;
+			children = (
+				BCF447D221038B9A0004B540 /* UdacityClient.swift */,
+				BCF447D421038BBF0004B540 /* UdacityConstants.swift */,
+			);
+			path = Udacity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,8 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF447D92103F0060004B540 /* BorderedButton.swift in Sources */,
 				BCD2E15C2101634F007746AE /* LoginViewController.swift in Sources */,
+				BCF447D521038BBF0004B540 /* UdacityConstants.swift in Sources */,
 				BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */,
+				BCF447D321038B9A0004B540 /* UdacityClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

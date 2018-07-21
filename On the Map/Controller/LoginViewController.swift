@@ -12,16 +12,20 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    @IBOutlet weak var loginButton: BorderedButton!
+    @IBOutlet weak var debugTextLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
-    @IBAction func loginPressed(_ sender: UIButton) {
+    @IBAction func loginPressed(_ sender: BorderedButton) {
     }
+    
     
     @IBAction func signUpPressed(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string : UdacityClient.Constants.AccountSignUpURL)!, options: [:], completionHandler: nil )
     }
     
 }
