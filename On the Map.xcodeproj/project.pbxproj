@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2E14221015DEB007746AE /* AppDelegate.swift */; };
-		BCD2E14521015DEB007746AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2E14421015DEB007746AE /* ViewController.swift */; };
 		BCD2E14821015DEB007746AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14621015DEB007746AE /* Main.storyboard */; };
 		BCD2E14A21015DED007746AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14921015DED007746AE /* Assets.xcassets */; };
 		BCD2E14D21015DED007746AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14B21015DED007746AE /* LaunchScreen.storyboard */; };
+		BCD2E15C2101634F007746AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2E15B2101634F007746AE /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BCD2E13F21015DEB007746AE /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD2E14221015DEB007746AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BCD2E14421015DEB007746AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BCD2E14721015DEB007746AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCD2E14921015DED007746AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCD2E14C21015DED007746AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCD2E14E21015DED007746AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCD2E15B2101634F007746AE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,9 @@
 			isa = PBXGroup;
 			children = (
 				BCD2E14221015DEB007746AE /* AppDelegate.swift */,
-				BCD2E14421015DEB007746AE /* ViewController.swift */,
+				BCD2E15A2101630E007746AE /* Model */,
+				BCD2E15921016303007746AE /* View */,
+				BCD2E157210162E4007746AE /* Controller */,
 				BCD2E15421015E2B007746AE /* Supporting Files */,
 			);
 			path = "On the Map";
@@ -70,6 +72,28 @@
 				BCD2E14E21015DED007746AE /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCD2E157210162E4007746AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCD2E15B2101634F007746AE /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCD2E15921016303007746AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCD2E15A2101630E007746AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCD2E14521015DEB007746AE /* ViewController.swift in Sources */,
+				BCD2E15C2101634F007746AE /* LoginViewController.swift in Sources */,
 				BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L767FN4JUX;
-				INFOPLIST_FILE = "On the Map/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/On the Map/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L767FN4JUX;
-				INFOPLIST_FILE = "On the Map/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/On the Map/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
