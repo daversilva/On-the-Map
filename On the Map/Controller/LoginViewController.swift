@@ -16,6 +16,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: BorderedButton!
     
+    // MARK: Reachability
+    let reachability = Reachability()!
+    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
@@ -29,22 +32,26 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginPressed(_ sender: BorderedButton) {
         
-        if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            displayError(UdacityClient.Messages.EmailOrPasswordEmpty)
+        if reachability.connection == .none {
+            displayError(UdacityClient.Messages.NoConnection)
         } else {
-            setUIEnabled(false)
-            
-            let credentials = StudentCredential(username: emailTextField.text!, password: passwordTextField.text!)
-            
-            UdacityClient.sharedInstance().loginWithCredentials(credentials) { (success, sessionId, error) in
-                if success {
-                    print(sessionId!)
-                } else {
-                    print(error!)
-                    self.displayError(UdacityClient.Messages.EmailOrPasswordWrong)
-                }
+            if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+                displayError(UdacityClient.Messages.EmailOrPasswordEmpty)
+            } else {
+                setUIEnabled(false)
                 
-                self.setUIEnabled(true)
+                let credentials = StudentCredential(username: emailTextField.text!, password: passwordTextField.text!)
+                
+                UdacityClient.sharedInstance().loginWithCredentials(credentials) { (success, sessionId, error) in
+                    if success {
+                        print(sessionId!)
+                    } else {
+                        print(error!)
+                        self.displayError(UdacityClient.Messages.EmailOrPasswordWrong)
+                    }
+                    
+                    self.setUIEnabled(true)
+                }
             }
         }
     }

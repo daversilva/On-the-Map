@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73BC3A2106BE92006C79B6 /* Reachability.swift */; };
 		BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2E14221015DEB007746AE /* AppDelegate.swift */; };
 		BCD2E14821015DEB007746AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14621015DEB007746AE /* Main.storyboard */; };
 		BCD2E14A21015DED007746AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14921015DED007746AE /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC73BC3A2106BE92006C79B6 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		BCD2E13F21015DEB007746AE /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD2E14221015DEB007746AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD2E14721015DEB007746AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				BCD2E14221015DEB007746AE /* AppDelegate.swift */,
+				BC73BC3A2106BE92006C79B6 /* Reachability.swift */,
 				BCD2E15A2101630E007746AE /* Model */,
 				BCD2E15921016303007746AE /* View */,
 				BCD2E157210162E4007746AE /* Controller */,
@@ -204,6 +207,7 @@
 				BCF447D521038BBF0004B540 /* UdacityConstants.swift in Sources */,
 				BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */,
 				BCF447D321038B9A0004B540 /* UdacityClient.swift in Sources */,
+				BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */,
 				BCD9EFD02104D472007321A9 /* UdacityConvenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

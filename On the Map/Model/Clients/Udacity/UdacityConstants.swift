@@ -53,5 +53,6 @@ extension UdacityClient {
         static let Dismiss = "Dismiss"
         static let EmailOrPasswordEmpty = "Email or Password Empty."
         static let EmailOrPasswordWrong = "Email or Password Wrong."
+        static let NoConnection = "No Networking in your Device."
     }
 }

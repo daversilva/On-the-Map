@@ -26,7 +26,7 @@ extension UdacityClient {
             
             guard let account = results![UdacityClient.JSONResponseKeys.Session] as? [String:AnyObject],
                 let sessionId = account[UdacityClient.JSONResponseKeys.ID] as? String else {
-                    print("Could not find account or sessionId in \(String(describing: results))")
+                print("Could not find account or sessionId in \(String(describing: results))")
                 return
             }
             
