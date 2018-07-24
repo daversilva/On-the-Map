@@ -34,25 +34,28 @@ class LoginViewController: UIViewController {
         
         if reachability.connection == .none {
             displayError(UdacityClient.Messages.NoConnection)
-        } else {
-            if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-                displayError(UdacityClient.Messages.EmailOrPasswordEmpty)
+            return
+        }
+        
+        if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+            displayError(UdacityClient.Messages.EmailOrPasswordEmpty)
+            return
+        }
+        
+        setUIEnabled(false)
+        
+        let credentials = StudentCredential(username: emailTextField.text!, password: passwordTextField.text!)
+        
+        UdacityClient.sharedInstance().loginWithCredentials(credentials) { (success, error) in
+            
+            if success {
+                print(UdacityClient.sharedInstance().sessionID!)
             } else {
-                setUIEnabled(false)
-                
-                let credentials = StudentCredential(username: emailTextField.text!, password: passwordTextField.text!)
-                
-                UdacityClient.sharedInstance().loginWithCredentials(credentials) { (success, sessionId, error) in
-                    if success {
-                        print(sessionId!)
-                    } else {
-                        print(error!)
-                        self.displayError(UdacityClient.Messages.EmailOrPasswordWrong)
-                    }
-                    
-                    self.setUIEnabled(true)
-                }
+                print(error!)
+                self.displayError(UdacityClient.Messages.EmailOrPasswordWrong)
             }
+            
+            self.setUIEnabled(true)
         }
     }
     

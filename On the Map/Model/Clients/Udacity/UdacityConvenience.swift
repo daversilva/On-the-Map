@@ -13,14 +13,14 @@ extension UdacityClient {
     
     // MARK: POST Convenience Methods
     
-    func loginWithCredentials(_ credentials: StudentCredential, completionHandlerForSession: @escaping (_ success: Bool, _ sessionID: String?, _ errorString: String?) -> Void)  {
+    func loginWithCredentials(_ credentials: StudentCredential, completionHandlerForSession: @escaping (_ success: Bool, _ errorString: String?) -> Void)  {
         
         let jsonBody = "{\"\(UdacityClient.JSONBodyKeys.Udacity)\": {\"\(UdacityClient.JSONBodyKeys.UserName)\": \"\(credentials.username)\", \"\(UdacityClient.JSONBodyKeys.Password)\": \"\(credentials.password)\"}}"
         
         let _ = taskForPOSTMethod(jsonBody: jsonBody) { (results, error) in
             guard (error == nil) else {
                 print(error!)
-                completionHandlerForSession(false, nil, error?.localizedDescription)
+                completionHandlerForSession(false, error?.localizedDescription)
                 return
             }
             
@@ -31,7 +31,7 @@ extension UdacityClient {
             }
             
             self.sessionID = sessionId
-            completionHandlerForSession(true, sessionId, nil)
+            completionHandlerForSession(true, nil)
         }
     }
 
