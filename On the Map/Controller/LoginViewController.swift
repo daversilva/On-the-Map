@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: BorderedButton!
-    @IBOutlet weak var loginWithFacebookButton: LoginFacebookButton!
+    @IBOutlet weak var loginFacebookButton: LoginFacebookButton!
     
     let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
     
@@ -132,6 +132,8 @@ private extension LoginViewController {
         passwordTextField.isEnabled = enabled
         loginButton.isEnabled = enabled
         loginButton.alpha = enabled ? 1.0 : 0.5
+        loginFacebookButton.isEnabled = enabled
+        loginFacebookButton.alpha = enabled ? 1.0 : 0.5
     }
     
     func displayError(_ errorString: String?) {

@@ -111,7 +111,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="IQI-wF-zAC" id="WL2-qF-Vug"/>
                         <outlet property="loginButton" destination="WRe-1I-Fnt" id="dsY-Jj-75M"/>
-                        <outlet property="loginWithFacebookButton" destination="GCl-Ws-f6a" id="3kf-rl-muG"/>
+                        <outlet property="loginFacebookButton" destination="GCl-Ws-f6a" id="3kf-rl-muG"/>
                         <outlet property="passwordTextField" destination="Vjt-f9-uMN" id="h9u-Ic-fbe"/>
                     </connections>
                 </viewController>
