@@ -58,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BCA11FB621091A660084C698 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BCD2E14621015DEB007746AE /* Main.storyboard */,
+				BCD2E14921015DED007746AE /* Assets.xcassets */,
+				BCD2E14B21015DED007746AE /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		BCD2E13621015DEB007746AE = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 				BCD2E15A2101630E007746AE /* Model */,
 				BCD2E15921016303007746AE /* View */,
 				BCD2E157210162E4007746AE /* Controller */,
+				BCA11FB621091A660084C698 /* Assets */,
 				BCD2E15421015E2B007746AE /* Supporting Files */,
 			);
 			path = "On the Map";
@@ -91,9 +102,6 @@
 		BCD2E15421015E2B007746AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BCD2E14621015DEB007746AE /* Main.storyboard */,
-				BCD2E14921015DED007746AE /* Assets.xcassets */,
-				BCD2E14B21015DED007746AE /* LaunchScreen.storyboard */,
 				BCD2E14E21015DED007746AE /* Info.plist */,
 			);
 			path = "Supporting Files";
