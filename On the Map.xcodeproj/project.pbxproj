@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73BC3A2106BE92006C79B6 /* Reachability.swift */; };
+		BCA11FB52108ACC40084C698 /* LoginFacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */; };
 		BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2E14221015DEB007746AE /* AppDelegate.swift */; };
 		BCD2E14821015DEB007746AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14621015DEB007746AE /* Main.storyboard */; };
 		BCD2E14A21015DED007746AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14921015DED007746AE /* Assets.xcassets */; };
@@ -15,6 +16,9 @@
 		BCD2E15C2101634F007746AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2E15B2101634F007746AE /* LoginViewController.swift */; };
 		BCD9EFD02104D472007321A9 /* UdacityConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9EFCF2104D472007321A9 /* UdacityConvenience.swift */; };
 		BCD9EFD22105310A007321A9 /* UdacityStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9EFD12105310A007321A9 /* UdacityStudent.swift */; };
+		BCDA92A921081745003F25D8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDA92A621081744003F25D8 /* Bolts.framework */; };
+		BCDA92AA21081745003F25D8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDA92A721081745003F25D8 /* FBSDKCoreKit.framework */; };
+		BCDA92AB21081745003F25D8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDA92A821081745003F25D8 /* FBSDKLoginKit.framework */; };
 		BCF447D321038B9A0004B540 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF447D221038B9A0004B540 /* UdacityClient.swift */; };
 		BCF447D521038BBF0004B540 /* UdacityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF447D421038BBF0004B540 /* UdacityConstants.swift */; };
 		BCF447D92103F0060004B540 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF447D82103F0060004B540 /* BorderedButton.swift */; };
@@ -22,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		BC73BC3A2106BE92006C79B6 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacebookButton.swift; sourceTree = "<group>"; };
 		BCD2E13F21015DEB007746AE /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD2E14221015DEB007746AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD2E14721015DEB007746AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,6 +36,9 @@
 		BCD2E15B2101634F007746AE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BCD9EFCF2104D472007321A9 /* UdacityConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityConvenience.swift; sourceTree = "<group>"; };
 		BCD9EFD12105310A007321A9 /* UdacityStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityStudent.swift; sourceTree = "<group>"; };
+		BCDA92A621081744003F25D8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		BCDA92A721081745003F25D8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		BCDA92A821081745003F25D8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		BCF447D221038B9A0004B540 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		BCF447D421038BBF0004B540 /* UdacityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityConstants.swift; sourceTree = "<group>"; };
 		BCF447D82103F0060004B540 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
@@ -41,6 +49,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDA92A921081745003F25D8 /* Bolts.framework in Frameworks */,
+				BCDA92AA21081745003F25D8 /* FBSDKCoreKit.framework in Frameworks */,
+				BCDA92AB21081745003F25D8 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +63,7 @@
 			children = (
 				BCD2E14121015DEB007746AE /* On the Map */,
 				BCD2E14021015DEB007746AE /* Products */,
+				BCDA92A521081716003F25D8 /* FacebookSDK */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF447D82103F0060004B540 /* BorderedButton.swift */,
+				BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +122,16 @@
 				BCF447D021038B520004B540 /* Clients */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BCDA92A521081716003F25D8 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				BCDA92A621081744003F25D8 /* Bolts.framework */,
+				BCDA92A721081745003F25D8 /* FBSDKCoreKit.framework */,
+				BCDA92A821081745003F25D8 /* FBSDKLoginKit.framework */,
+			);
+			path = FacebookSDK;
 			sourceTree = "<group>";
 		};
 		BCF447D021038B520004B540 /* Clients */ = {
@@ -205,6 +228,7 @@
 				BCD9EFD22105310A007321A9 /* UdacityStudent.swift in Sources */,
 				BCD2E15C2101634F007746AE /* LoginViewController.swift in Sources */,
 				BCF447D521038BBF0004B540 /* UdacityConstants.swift in Sources */,
+				BCA11FB52108ACC40084C698 /* LoginFacebookButton.swift in Sources */,
 				BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */,
 				BCF447D321038B9A0004B540 /* UdacityClient.swift in Sources */,
 				BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */,
@@ -354,6 +378,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L767FN4JUX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/On the Map/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -372,6 +400,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L767FN4JUX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/On the Map/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
