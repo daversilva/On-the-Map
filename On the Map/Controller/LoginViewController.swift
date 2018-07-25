@@ -44,6 +44,11 @@ class LoginViewController: UIViewController {
         
         setUIEnabled(false)
         
+        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+
         let credentials = StudentCredential(username: emailTextField.text!, password: passwordTextField.text!)
         
         UdacityClient.sharedInstance().loginWithCredentials(credentials) { (success, error) in
@@ -55,7 +60,10 @@ class LoginViewController: UIViewController {
                 self.displayError(UdacityClient.Messages.EmailOrPasswordWrong)
             }
             
-            self.setUIEnabled(true)
+            DispatchQueue.main.async {
+                self.setUIEnabled(true)
+                activityIndicator.stopAnimating()
+            }
         }
     }
     
@@ -70,12 +78,10 @@ class LoginViewController: UIViewController {
 private extension LoginViewController {
     
     func setUIEnabled(_ enabled: Bool) {
-        DispatchQueue.main.async {
-            self.emailTextField.isEnabled = enabled
-            self.passwordTextField.isEnabled = enabled
-            self.loginButton.isEnabled = enabled
-            self.loginButton.alpha = enabled ? 1.0 : 0.5
-        }
+        emailTextField.isEnabled = enabled
+        passwordTextField.isEnabled = enabled
+        loginButton.isEnabled = enabled
+        loginButton.alpha = enabled ? 1.0 : 0.5
     }
     
     func displayError(_ errorString: String?) {
