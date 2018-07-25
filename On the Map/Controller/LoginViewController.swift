@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: BorderedButton!
     @IBOutlet weak var loginWithFacebookButton: LoginFacebookButton!
     
+    let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+    
     // MARK: Reachability
     let reachability = Reachability()!
     
@@ -26,6 +28,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureActivityIndicator()
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -46,11 +50,7 @@ class LoginViewController: UIViewController {
         }
         
         setUIEnabled(false)
-        
-        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
-        activityIndicator.center = view.center
-        activityIndicator.startAnimating()
-        view.addSubview(activityIndicator)
+        self.activityIndicator.startAnimating()
 
         let credentials = StudentCredential(username: emailTextField.text!, password: passwordTextField.text!)
         
@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
                 self.setUIEnabled(true)
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
-                activityIndicator.stopAnimating()
+                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -89,6 +89,9 @@ class LoginViewController: UIViewController {
                 return
             }
             
+            self.setUIEnabled(false)
+            self.activityIndicator.startAnimating()
+            
             UdacityClient.sharedInstance().loginWithFacebook(accessToken) { (success, error) in
                 
                 if success {
@@ -99,10 +102,11 @@ class LoginViewController: UIViewController {
                 }
                 
                 DispatchQueue.main.async {
+                    self.setUIEnabled(true)
                     self.emailTextField.text = ""
                     self.passwordTextField.text = ""
+                    self.activityIndicator.stopAnimating()
                 }
-
             }
             
         }
@@ -112,6 +116,11 @@ class LoginViewController: UIViewController {
         UIApplication.shared.open(URL(string : UdacityClient.Constants.AccountSignUpURL)!, options: [:], completionHandler: nil)
     }
  
+    private func configureActivityIndicator() {
+        activityIndicator.center = view.center
+        activityIndicator.color = UIColor(red: 0.0, green: 162.0/255.0, blue: 218.0/255, alpha: 1.0)
+        view.addSubview(activityIndicator)
+    }
 }
 
 // MARK: LoginViewController - (Configure UI)
