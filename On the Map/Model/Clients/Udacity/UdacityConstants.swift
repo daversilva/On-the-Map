@@ -30,6 +30,8 @@ extension UdacityClient {
         static let Udacity = "udacity"
         static let UserName = "username"
         static let Password = "password"
+        static let Facebook = "facebook_mobile"
+        static let AccessToken = "access_token"
     }
     
     // MARK: JSON Response Keys
@@ -54,5 +56,8 @@ extension UdacityClient {
         static let EmailOrPasswordEmpty = "Email or Password Empty."
         static let EmailOrPasswordWrong = "Email or Password Wrong."
         static let NoConnection = "No Networking in your Device."
+        static let LoginError = "Login Error"
+        static let TokenError = "Token Error"
+        static let FacebookError = "Facebook can't connect to server."
     }
 }

@@ -1,20 +1,21 @@
 //
-//  BorderedButton.swift
+//  LoginButtonFacebook.swift
 //  On the Map
 //
-//  Created by David Rodrigues on 21/07/2018.
+//  Created by David Rodrigues on 25/07/2018.
 //  Copyright © 2018 David Rodrigues. All rights reserved.
 //
 
 import UIKit
+import FBSDKLoginKit
 
-class BorderedButton: UIButton {
+class LoginFacebookButton: UIButton {
 
     // MARK: Properties
     
     // constants for styling and configuration
-    let button = UIColor(red: 0.0, green: 162.0/255.0, blue: 218.0/255, alpha: 1.0)
-    let shadow = UIColor(red: 28.0/255.0, green: 129.0/255.0, blue: 158.0/255.0, alpha: 1.0)
+    let button = UIColor(red: 64.0/255.0, green: 102.0/255.0, blue: 175.0/255, alpha: 1.0)
+    let shadow = UIColor(red: 64.0/255.0, green: 64.0/255.0, blue: 150.0/255.0, alpha: 1.0)
     let titleLabelFontSize: CGFloat = 17.0
     let borderedButtonHeight: CGFloat = 44.0
     let borderedButtonCornerRadius: CGFloat = 4.0
@@ -44,7 +45,7 @@ class BorderedButton: UIButton {
         setTitleColor(.white, for: UIControlState())
         titleLabel?.font = UIFont.systemFont(ofSize: titleLabelFontSize)
     }
-
+    
     // MARK: Setters
     
     private func setBackingColor(_ newBackingColor: UIColor) {
@@ -83,4 +84,5 @@ class BorderedButton: UIButton {
         sizeThatFits.height = borderedButtonHeight
         return sizeThatFits
     }
+    
 }

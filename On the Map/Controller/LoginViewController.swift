@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class LoginViewController: UIViewController {
     
@@ -15,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: BorderedButton!
+    @IBOutlet weak var loginWithFacebookButton: LoginFacebookButton!
     
     // MARK: Reachability
     let reachability = Reachability()!
@@ -27,10 +30,10 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-    
+
     // MARK: Actions
     
-    @IBAction func loginPressed(_ sender: BorderedButton) {
+    @IBAction func loginPressed(_ sender: UIButton) {
         
         if reachability.connection == .none {
             displayError(UdacityClient.Messages.NoConnection)
@@ -62,8 +65,46 @@ class LoginViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.setUIEnabled(true)
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
                 activityIndicator.stopAnimating()
             }
+        }
+    }
+    
+    @IBAction func loginWithFacebookPressed(_ sender: LoginFacebookButton) {
+        
+        let loginManager: FBSDKLoginManager = FBSDKLoginManager()
+        loginManager.loginBehavior = FBSDKLoginBehavior.web
+        
+        loginManager.logIn(withPublishPermissions: [], from: self) { (result, error) in
+            
+            guard (error == nil) else {
+                self.displayError(UdacityClient.Messages.LoginError)
+                return
+            }
+            
+            guard let _ = result?.token, let accessToken = FBSDKAccessToken.current().tokenString else {
+                self.displayError(UdacityClient.Messages.TokenError)
+                return
+            }
+            
+            UdacityClient.sharedInstance().loginWithFacebook(accessToken) { (success, error) in
+                
+                if success {
+                    print(UdacityClient.sharedInstance().sessionID!)
+                } else {
+                    print(error!)
+                    self.displayError(UdacityClient.Messages.FacebookError)
+                }
+                
+                DispatchQueue.main.async {
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
+                }
+
+            }
+            
         }
     }
     
