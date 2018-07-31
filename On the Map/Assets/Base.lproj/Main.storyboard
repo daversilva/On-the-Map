@@ -136,16 +136,16 @@
             </objects>
             <point key="canvasLocation" x="852" y="34"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Student Table View Controller-->
         <scene sceneID="IU3-Xw-nlu">
             <objects>
-                <tableViewController id="v0X-tM-bDY" sceneMemberID="viewController">
+                <tableViewController id="v0X-tM-bDY" customClass="StudentTableViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eX2-Uo-AuP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StundentDetailCell" textLabel="57W-pQ-jR9" detailTextLabel="FtS-XW-i6I" style="IBUITableViewCellStyleSubtitle" id="UKo-Rg-yuQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StundentDetailCell" textLabel="57W-pQ-jR9" detailTextLabel="FtS-XW-i6I" style="IBUITableViewCellStyleSubtitle" id="UKo-Rg-yuQ" customClass="StudentLocationTableViewCell" customModule="On_the_Map" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UKo-Rg-yuQ" id="4rE-4t-aLe">
@@ -168,6 +168,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="firstName" destination="57W-pQ-jR9" id="b1L-aL-CTl"/>
+                                    <outlet property="mediaUrl" destination="FtS-XW-i6I" id="PyD-u4-5m0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

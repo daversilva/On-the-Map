@@ -22,6 +22,12 @@
 		BCF447D321038B9A0004B540 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF447D221038B9A0004B540 /* UdacityClient.swift */; };
 		BCF447D521038BBF0004B540 /* UdacityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF447D421038BBF0004B540 /* UdacityConstants.swift */; };
 		BCF447D92103F0060004B540 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF447D82103F0060004B540 /* BorderedButton.swift */; };
+		BCF90D1C210AC46700974892 /* StudentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D1B210AC46700974892 /* StudentClient.swift */; };
+		BCF90D1E210AC49E00974892 /* StudentConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D1D210AC49E00974892 /* StudentConstants.swift */; };
+		BCF90D21210AC5AB00974892 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D20210AC5AB00974892 /* Student.swift */; };
+		BCF90D23210AC70B00974892 /* StudentConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D22210AC70B00974892 /* StudentConvenience.swift */; };
+		BCF90D25210ACE8400974892 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D24210ACE8400974892 /* StudentTableViewController.swift */; };
+		BCF90D27210ACF5700974892 /* StudentLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D26210ACF5700974892 /* StudentLocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		BCF447D221038B9A0004B540 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		BCF447D421038BBF0004B540 /* UdacityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityConstants.swift; sourceTree = "<group>"; };
 		BCF447D82103F0060004B540 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		BCF90D1B210AC46700974892 /* StudentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClient.swift; sourceTree = "<group>"; };
+		BCF90D1D210AC49E00974892 /* StudentConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentConstants.swift; sourceTree = "<group>"; };
+		BCF90D20210AC5AB00974892 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		BCF90D22210AC70B00974892 /* StudentConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentConvenience.swift; sourceTree = "<group>"; };
+		BCF90D24210ACE8400974892 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
+		BCF90D26210ACF5700974892 /* StudentLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				BCD2E15B2101634F007746AE /* LoginViewController.swift */,
+				BCF90D24210ACE8400974892 /* StudentTableViewController.swift */,
+				BCF90D26210ACF5700974892 /* StudentLocationTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +159,7 @@
 		BCF447D021038B520004B540 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				BCF90D1F210AC55700974892 /* Student */,
 				BCF447D121038B5F0004B540 /* Udacity */,
 			);
 			path = Clients;
@@ -159,6 +174,17 @@
 				BCD9EFD12105310A007321A9 /* UdacityStudent.swift */,
 			);
 			path = Udacity;
+			sourceTree = "<group>";
+		};
+		BCF90D1F210AC55700974892 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				BCF90D20210AC5AB00974892 /* Student.swift */,
+				BCF90D1B210AC46700974892 /* StudentClient.swift */,
+				BCF90D1D210AC49E00974892 /* StudentConstants.swift */,
+				BCF90D22210AC70B00974892 /* StudentConvenience.swift */,
+			);
+			path = Student;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,11 +260,17 @@
 			files = (
 				BCF447D92103F0060004B540 /* BorderedButton.swift in Sources */,
 				BCD9EFD22105310A007321A9 /* UdacityStudent.swift in Sources */,
+				BCF90D1C210AC46700974892 /* StudentClient.swift in Sources */,
 				BCD2E15C2101634F007746AE /* LoginViewController.swift in Sources */,
 				BCF447D521038BBF0004B540 /* UdacityConstants.swift in Sources */,
 				BCA11FB52108ACC40084C698 /* LoginFacebookButton.swift in Sources */,
 				BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */,
+				BCF90D21210AC5AB00974892 /* Student.swift in Sources */,
+				BCF90D25210ACE8400974892 /* StudentTableViewController.swift in Sources */,
+				BCF90D23210AC70B00974892 /* StudentConvenience.swift in Sources */,
+				BCF90D27210ACF5700974892 /* StudentLocationTableViewCell.swift in Sources */,
 				BCF447D321038B9A0004B540 /* UdacityClient.swift in Sources */,
+				BCF90D1E210AC49E00974892 /* StudentConstants.swift in Sources */,
 				BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */,
 				BCD9EFD02104D472007321A9 /* UdacityConvenience.swift in Sources */,
 			);

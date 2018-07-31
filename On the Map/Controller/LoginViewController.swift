@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
         setUIEnabled(false)
         self.activityIndicator.startAnimating()
 
-        let credentials = StudentCredential(username: emailTextField.text!, password: passwordTextField.text!)
+        let credentials = UdacityCredential(username: emailTextField.text!, password: passwordTextField.text!)
         
         UdacityClient.sharedInstance().loginWithCredentials(credentials) { (success, error) in
             
