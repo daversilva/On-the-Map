@@ -8,11 +8,7 @@
 
 import Foundation
 
-struct StudentInformation: Codable {
-    
-}
-
-struct StudentCredential {
+struct UdacityCredential {
     let username: String
     let password: String
 }

@@ -33,7 +33,7 @@ extension UdacityClient {
         }
     }
     
-    func loginWithCredentials(_ credentials: StudentCredential, completionHandlerForSession: @escaping (_ success: Bool, _ errorString: String?) -> Void)  {
+    func loginWithCredentials(_ credentials: UdacityCredential, completionHandlerForSession: @escaping (_ success: Bool, _ errorString: String?) -> Void)  {
         
         let jsonBody = "{\"\(UdacityClient.JSONBodyKeys.Udacity)\": {\"\(UdacityClient.JSONBodyKeys.UserName)\": \"\(credentials.username)\", \"\(UdacityClient.JSONBodyKeys.Password)\": \"\(credentials.password)\"}}"
         login(jsonBody, completionHandlerForSession: completionHandlerForSession)
