@@ -9,20 +9,16 @@
 import UIKit
 import FBSDKLoginKit
 
-class LoginFacebookButton: UIButton {
+class LoginFacebookButton: CommonAttributeButton {
 
     // MARK: Properties
+    override var shadow : UIColor? {
+        get { return UIColor(red: 64.0/255.0, green: 64.0/255.0, blue: 150.0/255.0, alpha: 1.0) }
+    }
     
-    // constants for styling and configuration
-    let button = UIColor(red: 64.0/255.0, green: 102.0/255.0, blue: 175.0/255, alpha: 1.0)
-    let shadow = UIColor(red: 64.0/255.0, green: 64.0/255.0, blue: 150.0/255.0, alpha: 1.0)
-    let titleLabelFontSize: CGFloat = 17.0
-    let borderedButtonHeight: CGFloat = 44.0
-    let borderedButtonCornerRadius: CGFloat = 4.0
-    let phoneBorderedButtonExtraPadding: CGFloat = 14.0
-    
-    var backingColor: UIColor? = nil
-    var highlightedBackingColor: UIColor? = nil
+    override var button: UIColor? {
+        get { return UIColor(red: 64.0/255.0, green: 102.0/255.0, blue: 175.0/255, alpha: 1.0) }
+    }
     
     // MARK: Initialization
     
@@ -45,21 +41,7 @@ class LoginFacebookButton: UIButton {
         setTitleColor(.white, for: UIControlState())
         titleLabel?.font = UIFont.systemFont(ofSize: titleLabelFontSize)
     }
-    
-    // MARK: Setters
-    
-    private func setBackingColor(_ newBackingColor: UIColor) {
-        if let _ = backingColor {
-            backingColor = newBackingColor
-            backgroundColor = newBackingColor
-        }
-    }
-    
-    private func setHighlightedBackingColor(_ newBackinglightedBackingColor: UIColor) {
-        highlightedBackingColor = newBackinglightedBackingColor
-        backingColor = highlightedBackingColor
-    }
-    
+  
     // MARK: Tracking
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
