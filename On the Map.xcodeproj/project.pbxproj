@@ -10,6 +10,8 @@
 		BC55724921114F73008B9B09 /* StudentMapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */; };
 		BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73BC3A2106BE92006C79B6 /* Reachability.swift */; };
 		BCA11FB52108ACC40084C698 /* LoginFacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */; };
+		BCAF3E472112AB37000422F8 /* StudentTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF3E462112AB37000422F8 /* StudentTabBarController.swift */; };
+		BCAF3E492112AF95000422F8 /* CommonAttributeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF3E482112AF95000422F8 /* CommonAttributeButton.swift */; };
 		BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2E14221015DEB007746AE /* AppDelegate.swift */; };
 		BCD2E14821015DEB007746AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14621015DEB007746AE /* Main.storyboard */; };
 		BCD2E14A21015DED007746AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD2E14921015DED007746AE /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMapKitViewController.swift; sourceTree = "<group>"; };
 		BC73BC3A2106BE92006C79B6 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacebookButton.swift; sourceTree = "<group>"; };
+		BCAF3E462112AB37000422F8 /* StudentTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTabBarController.swift; sourceTree = "<group>"; };
+		BCAF3E482112AF95000422F8 /* CommonAttributeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAttributeButton.swift; sourceTree = "<group>"; };
 		BCD2E13F21015DEB007746AE /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD2E14221015DEB007746AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD2E14721015DEB007746AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				BCF90D24210ACE8400974892 /* StudentTableViewController.swift */,
 				BCF90D26210ACF5700974892 /* StudentTableViewCell.swift */,
 				BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */,
+				BCAF3E462112AB37000422F8 /* StudentTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			children = (
 				BCF447D82103F0060004B540 /* BorderedButton.swift */,
 				BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */,
+				BCAF3E482112AF95000422F8 /* CommonAttributeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 				BCD9EFD22105310A007321A9 /* UdacityStudent.swift in Sources */,
 				BCF90D1C210AC46700974892 /* StudentClient.swift in Sources */,
 				BCD2E15C2101634F007746AE /* LoginViewController.swift in Sources */,
+				BCAF3E472112AB37000422F8 /* StudentTabBarController.swift in Sources */,
+				BCAF3E492112AF95000422F8 /* CommonAttributeButton.swift in Sources */,
 				BCF447D521038BBF0004B540 /* UdacityConstants.swift in Sources */,
 				BCA11FB52108ACC40084C698 /* LoginFacebookButton.swift in Sources */,
 				BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */,
