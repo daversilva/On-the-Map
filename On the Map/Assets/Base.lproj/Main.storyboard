@@ -145,32 +145,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StundentDetailCell" textLabel="57W-pQ-jR9" detailTextLabel="FtS-XW-i6I" style="IBUITableViewCellStyleSubtitle" id="UKo-Rg-yuQ" customClass="StudentLocationTableViewCell" customModule="On_the_Map" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StudentTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentTableViewCell" rowHeight="56" id="UKo-Rg-yuQ" customClass="StudentTableViewCell" customModule="On_the_Map" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UKo-Rg-yuQ" id="4rE-4t-aLe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="57W-pQ-jR9">
-                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pin" translatesAutoresizingMaskIntoConstraints="NO" id="X7X-Pc-kce">
+                                            <rect key="frame" x="8" y="0.0" width="55" height="55"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="55" id="IUx-Tk-ns6"/>
+                                                <constraint firstAttribute="width" constant="55" id="ynO-ft-37l"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00t-HH-Ub0">
+                                            <rect key="frame" x="71" y="2" width="296" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" identifier="idTitleHeight" id="M8A-ZS-Dwu"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FtS-XW-i6I">
-                                            <rect key="frame" x="16" y="25.5" width="33" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilg-EV-9Se">
+                                            <rect key="frame" x="71" y="28" width="296" height="26"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="X7X-Pc-kce" firstAttribute="leading" secondItem="4rE-4t-aLe" secondAttribute="leading" constant="8" id="CuJ-yl-kLk"/>
+                                        <constraint firstItem="Ilg-EV-9Se" firstAttribute="top" secondItem="00t-HH-Ub0" secondAttribute="bottom" constant="1" id="HnD-bI-J65"/>
+                                        <constraint firstItem="00t-HH-Ub0" firstAttribute="leading" secondItem="X7X-Pc-kce" secondAttribute="trailing" constant="8" id="M8U-W9-Ufs"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ilg-EV-9Se" secondAttribute="bottom" constant="2" id="aT4-S2-O45"/>
+                                        <constraint firstItem="00t-HH-Ub0" firstAttribute="top" secondItem="4rE-4t-aLe" secondAttribute="top" constant="2" id="drD-cI-Kgm"/>
+                                        <constraint firstAttribute="trailing" secondItem="00t-HH-Ub0" secondAttribute="trailing" constant="8" id="gS6-XW-5If"/>
+                                        <constraint firstItem="Ilg-EV-9Se" firstAttribute="leading" secondItem="X7X-Pc-kce" secondAttribute="trailing" constant="8" id="jsu-bc-T0e"/>
+                                        <constraint firstAttribute="bottom" secondItem="X7X-Pc-kce" secondAttribute="bottom" constant="0.5" id="ki5-nq-kiF"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ilg-EV-9Se" secondAttribute="trailing" constant="8" id="l9P-hD-gzs"/>
+                                        <constraint firstItem="Ilg-EV-9Se" firstAttribute="top" secondItem="00t-HH-Ub0" secondAttribute="bottom" constant="1" id="mHD-dQ-bXh"/>
+                                        <constraint firstItem="X7X-Pc-kce" firstAttribute="top" secondItem="4rE-4t-aLe" secondAttribute="top" constant="0.5" id="o6z-bD-iM8"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="firstName" destination="57W-pQ-jR9" id="b1L-aL-CTl"/>
-                                    <outlet property="mediaUrl" destination="FtS-XW-i6I" id="PyD-u4-5m0"/>
+                                    <outlet property="firstLastName" destination="00t-HH-Ub0" id="wak-m5-Ijk"/>
+                                    <outlet property="imagePin" destination="X7X-Pc-kce" id="Ixj-Ae-BxB"/>
+                                    <outlet property="mediaUrl" destination="Ilg-EV-9Se" id="Mb6-dx-ucc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -183,12 +206,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZM-Mh-DXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868" y="423"/>
+            <point key="canvasLocation" x="2868" y="422.33883058470769"/>
         </scene>
-        <!--View Controller-->
+        <!--Student Map Kit View Controller-->
         <scene sceneID="Ivl-t7-Jyf">
             <objects>
-                <viewController id="mZW-mR-FiB" sceneMemberID="viewController">
+                <viewController id="mZW-mR-FiB" customClass="StudentMapKitViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MJS-yH-Tk5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,6 +231,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_mapview-selected" landscapeImage="icon_mapview-selected" id="xFg-XS-FwZ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="studentMap" destination="i1T-Ay-iAZ" id="cBx-Yg-J0e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Op-9g-dtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,6 +392,7 @@
         <image name="icon_addpin" width="24" height="24"/>
         <image name="icon_listview-selected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
+        <image name="icon_pin" width="24" height="24"/>
         <image name="icon_refresh" width="24" height="24"/>
         <image name="icon_world" width="52" height="67"/>
         <image name="logo-u" width="62" height="62"/>

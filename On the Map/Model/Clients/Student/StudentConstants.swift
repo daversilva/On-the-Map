@@ -43,11 +43,34 @@ extension StudentClient {
             
             struct Key {
                 static let Limit = "limit"
+                static let Order = "order"
             }
             
             struct Value {
                 static let Limit = "100"
+                static let Order = "-updateAt"
             }
         }
     }
+    
+    // MARK: JSON Keys
+    struct JSONKeys {
+        static let Result = "results"
+        
+        static let ObjectId = "objectId"
+        static let UniqueKey = "uniqueKey"
+        static let FirstName = "firstName"
+        static let LastName = "lastName"
+        static let MapString = "mapString"
+        static let Latitude = "latitude"
+        static let Longitude = "longitude"
+        static let MediaURL = "mediaURL"
+        static let CreatedAt = "createdAt"
+        static let UpdatedAt = "updatedAt"
+    }
+    
+    struct Messages {
+        
+    }
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC55724921114F73008B9B09 /* StudentMapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */; };
 		BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73BC3A2106BE92006C79B6 /* Reachability.swift */; };
 		BCA11FB52108ACC40084C698 /* LoginFacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */; };
 		BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD2E14221015DEB007746AE /* AppDelegate.swift */; };
@@ -27,10 +28,11 @@
 		BCF90D21210AC5AB00974892 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D20210AC5AB00974892 /* Student.swift */; };
 		BCF90D23210AC70B00974892 /* StudentConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D22210AC70B00974892 /* StudentConvenience.swift */; };
 		BCF90D25210ACE8400974892 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D24210ACE8400974892 /* StudentTableViewController.swift */; };
-		BCF90D27210ACF5700974892 /* StudentLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D26210ACF5700974892 /* StudentLocationTableViewCell.swift */; };
+		BCF90D27210ACF5700974892 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF90D26210ACF5700974892 /* StudentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMapKitViewController.swift; sourceTree = "<group>"; };
 		BC73BC3A2106BE92006C79B6 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacebookButton.swift; sourceTree = "<group>"; };
 		BCD2E13F21015DEB007746AE /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +55,7 @@
 		BCF90D20210AC5AB00974892 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		BCF90D22210AC70B00974892 /* StudentConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentConvenience.swift; sourceTree = "<group>"; };
 		BCF90D24210ACE8400974892 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
-		BCF90D26210ACF5700974892 /* StudentLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationTableViewCell.swift; sourceTree = "<group>"; };
+		BCF90D26210ACF5700974892 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,8 @@
 			children = (
 				BCD2E15B2101634F007746AE /* LoginViewController.swift */,
 				BCF90D24210ACE8400974892 /* StudentTableViewController.swift */,
-				BCF90D26210ACF5700974892 /* StudentLocationTableViewCell.swift */,
+				BCF90D26210ACF5700974892 /* StudentTableViewCell.swift */,
+				BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,9 +269,10 @@
 				BCA11FB52108ACC40084C698 /* LoginFacebookButton.swift in Sources */,
 				BCD2E14321015DEB007746AE /* AppDelegate.swift in Sources */,
 				BCF90D21210AC5AB00974892 /* Student.swift in Sources */,
+				BC55724921114F73008B9B09 /* StudentMapKitViewController.swift in Sources */,
 				BCF90D25210ACE8400974892 /* StudentTableViewController.swift in Sources */,
 				BCF90D23210AC70B00974892 /* StudentConvenience.swift in Sources */,
-				BCF90D27210ACF5700974892 /* StudentLocationTableViewCell.swift in Sources */,
+				BCF90D27210ACF5700974892 /* StudentTableViewCell.swift in Sources */,
 				BCF447D321038B9A0004B540 /* UdacityClient.swift in Sources */,
 				BCF90D1E210AC49E00974892 /* StudentConstants.swift in Sources */,
 				BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */,

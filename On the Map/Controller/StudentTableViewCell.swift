@@ -8,21 +8,15 @@
 
 import UIKit
 
-class StudentLocationTableViewCell: UITableViewCell {
+class StudentTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var firstName: UILabel!
+    @IBOutlet weak var firstLastName: UILabel!
     @IBOutlet weak var mediaUrl: UILabel!
+    @IBOutlet weak var imagePin: UIImageView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
