@@ -376,7 +376,7 @@
                         <viewLayoutGuide key="safeArea" id="s8n-Zh-IbM"/>
                     </view>
                     <connections>
-                        <outlet property="mapViewPostLocation" destination="9mt-44-mj2" id="j8p-kb-xTe"/>
+                        <outlet property="studentMapView" destination="9mt-44-mj2" id="j8p-kb-xTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FI-kn-aBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,7 +398,6 @@
                             <barButtonItem image="icon_addpin" id="fJ9-Km-qa3">
                                 <color key="tintColor" name="main-color"/>
                                 <connections>
-                                    <action selector="addStudentButton:" destination="7h7-I2-dPm" id="Ea6-95-WMv"/>
                                     <segue destination="c6Q-cb-5AM" kind="presentation" id="Qvd-2s-jli"/>
                                 </connections>
                             </barButtonItem>
@@ -417,9 +416,9 @@
                         <color key="selectedImageTintColor" name="main-color"/>
                     </tabBar>
                     <connections>
-                        <outlet property="addStudent" destination="fJ9-Km-qa3" id="aUl-VB-AW1"/>
+                        <outlet property="addStudent" destination="fJ9-Km-qa3" id="UZ2-zd-Hxm"/>
                         <outlet property="logout" destination="DjD-Ah-dtW" id="D56-qq-Qnl"/>
-                        <outlet property="refresh" destination="Dir-Bq-34a" id="rul-6o-gIQ"/>
+                        <outlet property="refresh" destination="Dir-Bq-34a" id="Op6-i6-4o1"/>
                         <segue destination="mZW-mR-FiB" kind="relationship" relationship="viewControllers" id="1Z4-hO-bCG"/>
                         <segue destination="v0X-tM-bDY" kind="relationship" relationship="viewControllers" id="lAf-yt-2mb"/>
                     </connections>
