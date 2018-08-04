@@ -38,31 +38,30 @@ class LoginViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func loginPressed(_ sender: UIButton) {
-        
         if reachability.connection == .none {
             displayError(UdacityClient.Messages.NoConnection)
             return
         }
-        
+
         if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
             displayError(UdacityClient.Messages.EmailOrPasswordEmpty)
             return
         }
-        
+
         setUIEnabled(false)
         self.activityIndicator.startAnimating()
 
         let credentials = UdacityCredential(username: emailTextField.text!, password: passwordTextField.text!)
-        
+
         UdacityClient.sharedInstance().loginWithCredentials(credentials) { (success, error) in
-            
+
             if success {
-                print(UdacityClient.sharedInstance().sessionID!)
+                self.loginSuccess()
             } else {
                 print(error!)
                 self.displayError(UdacityClient.Messages.EmailOrPasswordWrong)
             }
-            
+
             DispatchQueue.main.async {
                 self.setUIEnabled(true)
                 self.emailTextField.text = ""
@@ -95,7 +94,7 @@ class LoginViewController: UIViewController {
             UdacityClient.sharedInstance().loginWithFacebook(accessToken) { (success, error) in
                 
                 if success {
-                    print(UdacityClient.sharedInstance().sessionID!)
+                    self.loginSuccess()
                 } else {
                     print(error!)
                     self.displayError(UdacityClient.Messages.FacebookError)
@@ -127,6 +126,8 @@ class LoginViewController: UIViewController {
 
 private extension LoginViewController {
     
+    // MARK: Helpers
+    
     func setUIEnabled(_ enabled: Bool) {
         emailTextField.isEnabled = enabled
         passwordTextField.isEnabled = enabled
@@ -145,6 +146,10 @@ private extension LoginViewController {
             
             present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func loginSuccess() {
+        performSegue(withIdentifier: "segueLogin", sender: nil)
     }
 }
 
