@@ -9,6 +9,7 @@
 import Foundation
 
 struct StudentLocation: Codable {
+    
     let objectId: String
     let uniqueKey: String
     let firstName: String
@@ -19,6 +20,10 @@ struct StudentLocation: Codable {
     let longitude: Double
     let createdAt: String
     let updatedAt: String
+
+}
+
+extension StudentLocation {
     
     init(parse: [String:AnyObject]) {
         if let objectId = parse[StudentClient.JSONKeys.ObjectId] as? String {
@@ -81,5 +86,4 @@ struct StudentLocation: Codable {
             self.updatedAt = ""
         }
     }
-
 }
