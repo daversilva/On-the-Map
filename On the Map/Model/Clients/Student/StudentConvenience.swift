@@ -36,6 +36,19 @@ extension StudentClient {
         
     }
     
+    func postStudent(location: Location, completionHandler: @escaping (_ success: Bool, _ error: String?) -> Void) {
+        
+        let jsonBody = "{\"\(StudentClient.JSONBody.UniqueKey)\": \"\(UdacityClient.sharedInstance().userID!)\", \"\(StudentClient.JSONBody.FirstName)\": \"\(UdacityClient.sharedInstance().firstName!)\", \"\(StudentClient.JSONBody.LastName)\": \"\(UdacityClient.sharedInstance().lastName!)\",\"\(StudentClient.JSONBody.MapString)\": \"\(location.mapString)\", \"\(StudentClient.JSONBody.MediaUrl)\": \"\(location.mediaURL)\",\"\(StudentClient.JSONBody.Latitude)\": \(location.latitude), \"\(StudentClient.JSONBody.Longitude)\": \(location.longitude)}"
+        
+        let _ = taskForPostMethod(jsonBody: jsonBody) { (success, error) in
+            if success {
+                completionHandler(true, nil)
+            } else {
+                completionHandler(true, error!)
+            }
+        }
+    }
+    
     private func parseJsonToStudent(_ results: [[String:AnyObject]]) -> [StudentLocation] {
         
         var students = [StudentLocation]()

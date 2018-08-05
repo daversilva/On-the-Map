@@ -69,6 +69,18 @@ extension StudentClient {
         static let UpdatedAt = "updatedAt"
     }
     
+    // MARK: JSONBody
+    
+    struct JSONBody {
+        static let UniqueKey = "uniqueKey"
+        static let FirstName = "firstName"
+        static let LastName = "lastName"
+        static let MapString = "mapString"
+        static let MediaUrl = "mediaURL"
+        static let Latitude = "latitude"
+        static let Longitude = "longitude"
+    }
+    
     struct Messages {
         
     }
