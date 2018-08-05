@@ -25,22 +25,21 @@ class StudentMapKitViewController: UIViewController {
         super.viewDidLoad()
         
         studentMap.delegate = self
-        
         loadStudent()
-        // Do any additional setup after loading the view.
+        
+        ViewHelper.sharedInstance().configureActivityIndicator(view)
+        ViewHelper.sharedInstance().activityIndicator.startAnimating()
     }
 
     private func loadStudent() {
         StudentClient.sharedInstance().loadStudents() { (results, success, error) in
             if success {
-                print("passed here")
                 DispatchQueue.main.async {
                     let object = UIApplication.shared.delegate
                     let appDelegate = object as! AppDelegate
                     appDelegate.studentLocations.append(contentsOf: results)
                     self.loadStudentsInMapView()
                     self.studentMap.reloadInputViews()
-                    
                 }
             }
         }
@@ -100,7 +99,11 @@ extension StudentMapKitViewController: MKMapViewDelegate {
             } else {
                 print("Doesn't possible open URL")
             }
-
         }
     }
+    
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+    }
+
 }

@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: BorderedButton!
     @IBOutlet weak var loginFacebookButton: LoginFacebookButton!
     
-    let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+    let Helper = ViewHelper.sharedInstance()
     
     // MARK: Reachability
     let reachability = Reachability()!
@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureActivityIndicator()
+        Helper.configureActivityIndicator(view)
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -39,17 +39,17 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginPressed(_ sender: UIButton) {
         if reachability.connection == .none {
-            displayError(UdacityClient.Messages.NoConnection)
+            Helper.displayError(self, UdacityClient.Messages.NoConnection)
             return
         }
 
         if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            displayError(UdacityClient.Messages.EmailOrPasswordEmpty)
+            Helper.displayError(self, UdacityClient.Messages.EmailOrPasswordEmpty)
             return
         }
 
         setUIEnabled(false)
-        self.activityIndicator.startAnimating()
+        ViewHelper.sharedInstance().activityIndicator.startAnimating()
 
         let credentials = UdacityCredential(username: emailTextField.text!, password: passwordTextField.text!)
 
@@ -59,14 +59,14 @@ class LoginViewController: UIViewController {
                 self.loginSuccess()
             } else {
                 print(error!)
-                self.displayError(UdacityClient.Messages.EmailOrPasswordWrong)
+                self.Helper.displayError(self, UdacityClient.Messages.EmailOrPasswordWrong)
             }
 
             DispatchQueue.main.async {
                 self.setUIEnabled(true)
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
-                self.activityIndicator.stopAnimating()
+                ViewHelper.sharedInstance().activityIndicator.startAnimating()
             }
         }
     }
@@ -79,17 +79,17 @@ class LoginViewController: UIViewController {
         loginManager.logIn(withPublishPermissions: [], from: self) { (result, error) in
             
             guard (error == nil) else {
-                self.displayError(UdacityClient.Messages.LoginError)
+                self.Helper.displayError(self, UdacityClient.Messages.LoginError)
                 return
             }
             
             guard let _ = result?.token, let accessToken = FBSDKAccessToken.current().tokenString else {
-                self.displayError(UdacityClient.Messages.TokenError)
+                self.Helper.displayError(self,UdacityClient.Messages.TokenError)
                 return
             }
             
             self.setUIEnabled(false)
-            self.activityIndicator.startAnimating()
+            ViewHelper.sharedInstance().activityIndicator.startAnimating()
             
             UdacityClient.sharedInstance().loginWithFacebook(accessToken) { (success, error) in
                 
@@ -97,14 +97,14 @@ class LoginViewController: UIViewController {
                     self.loginSuccess()
                 } else {
                     print(error!)
-                    self.displayError(UdacityClient.Messages.FacebookError)
+                    self.Helper.displayError(self, UdacityClient.Messages.FacebookError)
                 }
                 
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
                     self.emailTextField.text = ""
                     self.passwordTextField.text = ""
-                    self.activityIndicator.stopAnimating()
+                    ViewHelper.sharedInstance().activityIndicator.stopAnimating()
                 }
             }
             
@@ -114,12 +114,7 @@ class LoginViewController: UIViewController {
     @IBAction func signUpPressed(_ sender: UIButton) {
         UIApplication.shared.open(URL(string : UdacityClient.Constants.AccountSignUpURL)!, options: [:], completionHandler: nil)
     }
- 
-    private func configureActivityIndicator() {
-        activityIndicator.center = view.center
-        activityIndicator.color = UIColor(red: 0.0, green: 162.0/255.0, blue: 218.0/255, alpha: 1.0)
-        view.addSubview(activityIndicator)
-    }
+
 }
 
 // MARK: LoginViewController - (Configure UI)
@@ -135,17 +130,6 @@ private extension LoginViewController {
         loginButton.alpha = enabled ? 1.0 : 0.5
         loginFacebookButton.isEnabled = enabled
         loginFacebookButton.alpha = enabled ? 1.0 : 0.5
-    }
-    
-    func displayError(_ errorString: String?) {
-        if let errorString = errorString {
-            let alert = UIAlertController(title: UdacityClient.Messages.OnTheMap, message: errorString, preferredStyle: .alert)
-            let action = UIAlertAction(title: UdacityClient.Messages.Dismiss, style: .default, handler: nil)
-            
-            alert.addAction(action)
-            
-            present(alert, animated: true, completion: nil)
-        }
     }
     
     func loginSuccess() {

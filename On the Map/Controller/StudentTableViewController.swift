@@ -30,7 +30,6 @@ class StudentTableViewController: UITableViewController {
     private func loadStudent() {
         StudentClient.sharedInstance().loadStudents() { (results, success, error) in
             if success {
-                print("passed here")
                 DispatchQueue.main.async {
                     let object = UIApplication.shared.delegate
                     let appDelegate = object as! AppDelegate
