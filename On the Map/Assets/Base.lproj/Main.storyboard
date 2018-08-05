@@ -329,6 +329,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="findLocationButton" destination="6w7-j5-Xxj" id="geY-TL-occ"/>
                         <outlet property="location" destination="VdP-0b-4F8" id="LHP-mH-qgb"/>
                         <outlet property="mediaUrl" destination="sMZ-KK-fdb" id="F4B-aS-2z7"/>
                         <segue destination="Qsn-r4-ZPO" kind="show" identifier="segueAddLocation" id="pLy-PH-c6i"/>

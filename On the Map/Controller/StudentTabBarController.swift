@@ -13,6 +13,8 @@ class StudentTabBarController: UITabBarController, UITabBarControllerDelegate {
     @IBOutlet weak var logout: UIBarButtonItem!
     @IBOutlet weak var refresh: UIBarButtonItem!
     @IBOutlet weak var addStudent: UIBarButtonItem!
+    
+    var students = StudentArray.sharedInstance().studentLocations
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +34,12 @@ class StudentTabBarController: UITabBarController, UITabBarControllerDelegate {
         StudentClient.sharedInstance().loadStudents() { (results, success, error) in
             if success {
                 DispatchQueue.main.async {
-                    let object = UIApplication.shared.delegate
-                    let appDelegate = object as! AppDelegate
-                    appDelegate.studentLocations = []
-                    appDelegate.studentLocations.append(contentsOf: results)
+                    self.students.append(contentsOf: results)
+                }
+            } else {
+                print(error!)
+                DispatchQueue.main.async {
+                    ViewHelper.sharedInstance().displayError(self, "It was not possible to display the students!")
                 }
             }
         }

@@ -10,11 +10,7 @@ import UIKit
 
 class StudentTableViewController: UITableViewController {
     
-    var students: [StudentLocation]! {
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        return appDelegate.studentLocations
-    }
+    var students = StudentArray.sharedInstance().studentLocations
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +27,7 @@ class StudentTableViewController: UITableViewController {
         StudentClient.sharedInstance().loadStudents() { (results, success, error) in
             if success {
                 DispatchQueue.main.async {
-                    let object = UIApplication.shared.delegate
-                    let appDelegate = object as! AppDelegate
-                    appDelegate.studentLocations.append(contentsOf: results)
+                    self.students.append(contentsOf: results)
                     self.tableView.reloadData()
                 }
             }

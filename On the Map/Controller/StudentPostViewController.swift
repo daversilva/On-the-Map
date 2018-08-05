@@ -13,6 +13,7 @@ class StudentPostViewController: UIViewController {
     
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var mediaUrl: UITextField!
+    @IBOutlet weak var findLocationButton: BorderedButton!
     
     var latitude = 0.0
     var longitude = 0.0
@@ -20,6 +21,8 @@ class StudentPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ViewHelper.sharedInstance().configureActivityIndicator(view)
+        
         location.delegate = self
         mediaUrl.delegate = self
     }
@@ -36,13 +39,22 @@ class StudentPostViewController: UIViewController {
             return
         }
         
+        setUIEnabled(false)
+        ViewHelper.sharedInstance().activityIndicator.startAnimating()
+        
         getLocation { (sucess, error) in
             if sucess {
                 DispatchQueue.main.async {
+                    self.setUIEnabled(true)
                     self.performSegue(withIdentifier: "segueAddLocation", sender: nil)
                 }
             } else {
                 print(error!)
+                DispatchQueue.main.async {
+                    self.setUIEnabled(true)
+                    ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+                    ViewHelper.sharedInstance().displayError(self, "It was not possible display to Location!")
+                }
             }
         }
     }
@@ -82,6 +94,15 @@ class StudentPostViewController: UIViewController {
         }
     }
     
+}
+
+extension StudentPostViewController {
+    func setUIEnabled(_ enabled: Bool) {
+        location.isEnabled = enabled
+        location.isEnabled = enabled
+        findLocationButton.isEnabled = enabled
+        findLocationButton.alpha = enabled ? 1.0 : 0.5
+    }
 }
 
 // MARK: StudentPostViewController: UITextFieldDelegate

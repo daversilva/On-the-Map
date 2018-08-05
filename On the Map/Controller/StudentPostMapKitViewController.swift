@@ -30,7 +30,7 @@ class StudentPostMapKitViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Helper.activityIndicator.startAnimating()
+        //Helper.activityIndicator.startAnimating()
     }
     
     @IBAction func postNewLocation(_ sender: UIButton) {
@@ -42,6 +42,7 @@ class StudentPostMapKitViewController: UIViewController {
             if success {
                 DispatchQueue.main.async {
                     self.Helper.activityIndicator.stopAnimating()
+                    self.dismiss(animated: true, completion: nil)
                 }
             } else {
                 DispatchQueue.main.async {
@@ -50,8 +51,6 @@ class StudentPostMapKitViewController: UIViewController {
                 }
             }
         }
-        
-        dismiss(animated: true, completion: nil)
     }
     
     func loadStudentLocationInMapView() {

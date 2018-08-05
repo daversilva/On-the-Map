@@ -59,6 +59,7 @@ class LoginViewController: UIViewController {
                 self.loginSuccess()
             } else {
                 print(error!)
+                ViewHelper.sharedInstance().activityIndicator.stopAnimating()
                 self.Helper.displayError(self, UdacityClient.Messages.EmailOrPasswordWrong)
             }
 

@@ -44,7 +44,7 @@ extension StudentClient {
             if success {
                 completionHandler(true, nil)
             } else {
-                completionHandler(true, error!)
+                completionHandler(false, error!)
             }
         }
     }

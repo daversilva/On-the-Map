@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC522C2921176180007F7447 /* StudentArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC522C2821176180007F7447 /* StudentArray.swift */; };
 		BC543524211663AE00D5E051 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC543523211663AE00D5E051 /* ViewHelper.swift */; };
 		BC55724921114F73008B9B09 /* StudentMapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */; };
 		BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73BC3A2106BE92006C79B6 /* Reachability.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC522C2821176180007F7447 /* StudentArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentArray.swift; sourceTree = "<group>"; };
 		BC543523211663AE00D5E051 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
 		BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMapKitViewController.swift; sourceTree = "<group>"; };
 		BC73BC3A2106BE92006C79B6 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				BCF90D1B210AC46700974892 /* StudentClient.swift */,
 				BCF90D1D210AC49E00974892 /* StudentConstants.swift */,
 				BCF90D22210AC70B00974892 /* StudentConvenience.swift */,
+				BC522C2821176180007F7447 /* StudentArray.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				BCF90D21210AC5AB00974892 /* Student.swift in Sources */,
 				BC55724921114F73008B9B09 /* StudentMapKitViewController.swift in Sources */,
 				BCF90D25210ACE8400974892 /* StudentTableViewController.swift in Sources */,
+				BC522C2921176180007F7447 /* StudentArray.swift in Sources */,
 				BCF90D23210AC70B00974892 /* StudentConvenience.swift in Sources */,
 				BCA7D3902114B53000CE6737 /* StudentPostMapKitViewController.swift in Sources */,
 				BCF90D27210ACF5700974892 /* StudentTableViewCell.swift in Sources */,
