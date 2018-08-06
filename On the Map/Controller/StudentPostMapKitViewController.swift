@@ -46,7 +46,7 @@ class StudentPostMapKitViewController: UIViewController {
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.Helper.displayError(self, "Unable to post to Location")
+                    self.Helper.displayError(self, StudentClient.Messages.UnablePostLocation)
                     self.Helper.activityIndicator.stopAnimating()
                 }
             }

@@ -82,7 +82,12 @@ extension StudentClient {
     }
     
     struct Messages {
-        
+        static let NotPossibleDownloadStudents = "It was not possible download the students!"
+        static let NotPossibleDisplayLocation = "It was not possible display to Location!"
+        static let NotPossibleDisplayStudents = "It was not possible to display the students!"
+        static let UnablePostLocation = "Unable to post to Location"
+        static let CompleteFields = "Complete all fields"
+        static let LocationNotFound = "Location not found"
     }
     
 }

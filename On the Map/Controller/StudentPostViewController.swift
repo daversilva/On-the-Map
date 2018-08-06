@@ -35,7 +35,7 @@ class StudentPostViewController: UIViewController {
     @IBAction func findLocation(_ sender: UIButton) {
 
         if location.text!.isEmpty || mediaUrl.text!.isEmpty {
-            ViewHelper.sharedInstance().displayError(self, "Complete all fields")
+            ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.CompleteFields)
             return
         }
         
@@ -53,7 +53,7 @@ class StudentPostViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
                     ViewHelper.sharedInstance().activityIndicator.stopAnimating()
-                    ViewHelper.sharedInstance().displayError(self, "It was not possible display to Location!")
+                    ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.NotPossibleDisplayLocation)
                 }
             }
         }
@@ -75,12 +75,12 @@ class StudentPostViewController: UIViewController {
         CLGeocoder().geocodeAddressString(location.text!) { (placemarks, error) in
             
             guard (error == nil) else {
-                completionHandlerForLocation(false, "Location not find")
+                completionHandlerForLocation(false, StudentClient.Messages.LocationNotFound)
                 return
             }
             
             guard let placemark = placemarks?[0] else {
-                completionHandlerForLocation(false, "Location not find")
+                completionHandlerForLocation(false, StudentClient.Messages.LocationNotFound)
                 return
             }
             
@@ -89,7 +89,7 @@ class StudentPostViewController: UIViewController {
                 self.longitude = coordinate.longitude
                 completionHandlerForLocation(true, nil)
             } else {
-                completionHandlerForLocation(false, "Location not find")
+                completionHandlerForLocation(false, StudentClient.Messages.LocationNotFound)
             }
         }
     }

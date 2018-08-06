@@ -39,7 +39,7 @@ class StudentTabBarController: UITabBarController, UITabBarControllerDelegate {
             } else {
                 print(error!)
                 DispatchQueue.main.async {
-                    ViewHelper.sharedInstance().displayError(self, "It was not possible to display the students!")
+                    ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.NotPossibleDisplayStudents)
                 }
             }
         }

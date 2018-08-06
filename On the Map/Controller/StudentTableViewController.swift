@@ -14,6 +14,9 @@ class StudentTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ViewHelper.sharedInstance().configureActivityIndicator(view)
+        ViewHelper.sharedInstance().activityIndicator.startAnimating()
 
         loadStudent()
     }
@@ -29,6 +32,11 @@ class StudentTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.students.append(contentsOf: results)
                     self.tableView.reloadData()
+                }
+            } else {
+                print(error!)
+                DispatchQueue.main.async {
+                    ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.NotPossibleDownloadStudents)
                 }
             }
         }
@@ -70,6 +78,15 @@ extension StudentTableViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             print("Doesn't possible open URL")
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let cell: StudentTableViewCell = cell as! StudentTableViewCell
+        
+        if let text = cell.firstLastName.text, !text.isEmpty {
+            ViewHelper.sharedInstance().activityIndicator.stopAnimating()
         }
     }
     

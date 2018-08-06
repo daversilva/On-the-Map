@@ -35,6 +35,11 @@ class StudentMapKitViewController: UIViewController {
                     self.loadStudentsInMapView()
                     self.studentMap.reloadInputViews()
                 }
+            } else {
+                print(error!)
+                DispatchQueue.main.async {
+                    ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.NotPossibleDownloadStudents)
+                }
             }
         }
     }
