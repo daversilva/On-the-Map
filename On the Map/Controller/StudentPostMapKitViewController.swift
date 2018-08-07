@@ -15,8 +15,6 @@ class StudentPostMapKitViewController: UIViewController {
     
     override var activityIndicatorTag: Int { get { return ViewTag.studentPostMapKit.rawValue } }
     
-    let Helper = ViewHelper.sharedInstance()
-    
     var mapString = ""
     var website = ""
     var latitude = 0.0
@@ -41,15 +39,14 @@ class StudentPostMapKitViewController: UIViewController {
         
         StudentClient.sharedInstance().postStudent(location: location) { (success, error) in
             if success {
+                self.stopActivityIndicator()
+                
                 DispatchQueue.main.async {
-                    self.stopActivityIndicator()
                     self.dismiss(animated: true, completion: nil)
                 }
             } else {
-                DispatchQueue.main.async {
-                    self.Helper.displayError(self, StudentClient.Messages.UnablePostLocation)
-                    self.stopActivityIndicator()
-                }
+                self.showAlert(self, StudentClient.Messages.UnablePostLocation)
+                self.stopActivityIndicator()
             }
         }
     }

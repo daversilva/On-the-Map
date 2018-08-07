@@ -38,14 +38,12 @@ class StudentTabBarController: UITabBarController, UITabBarControllerDelegate {
                 }
             } else {
                 print(error!)
-                DispatchQueue.main.async {
-                    ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.NotPossibleDisplayStudents)
-                }
+                self.showAlert(self, StudentClient.Messages.NotPossibleDisplayStudents)
             }
         }
         
         setUIEnable(true)
-       stopActivityIndicator()
+        stopActivityIndicator()
     }
     
     // MARK: Methods

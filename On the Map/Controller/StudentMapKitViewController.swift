@@ -36,9 +36,7 @@ class StudentMapKitViewController: UIViewController {
                 }
             } else {
                 print(error!)
-                DispatchQueue.main.async {
-                    ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.NotPossibleDownloadStudents)
-                }
+                self.showAlert(self, StudentClient.Messages.NotPossibleDownloadStudents)
             }
         }
     }

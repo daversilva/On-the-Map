@@ -21,8 +21,6 @@ class LoginViewController: UIViewController {
     
     override var activityIndicatorTag: Int { get { return ViewTag.login.rawValue } }
     
-    let Helper = ViewHelper.sharedInstance()
-    
     // MARK: Reachability
     let reachability = Reachability()!
     
@@ -39,12 +37,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginPressed(_ sender: UIButton) {
         if reachability.connection == .none {
-            Helper.displayError(self, UdacityClient.Messages.NoConnection)
+            showAlert(self, UdacityClient.Messages.NoConnection)
             return
         }
 
         if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            Helper.displayError(self, UdacityClient.Messages.EmailOrPasswordEmpty)
+            showAlert(self, UdacityClient.Messages.EmailOrPasswordEmpty)
             return
         }
 
@@ -57,17 +55,13 @@ class LoginViewController: UIViewController {
 
             if success {
                 self.loginSuccess()
-                DispatchQueue.main.async {
-                    self.setUIEnabled(true)
-                    self.stopActivityIndicator()
-                }
+                self.setUIEnabled(true)
+                self.stopActivityIndicator()
             } else {
                 print(error!)
-                DispatchQueue.main.async {
-                    self.Helper.displayError(self, UdacityClient.Messages.EmailOrPasswordWrong)
-                    self.setUIEnabled(true)
-                    self.stopActivityIndicator()
-                }
+                self.showAlert(self, UdacityClient.Messages.EmailOrPasswordWrong)
+                self.setUIEnabled(true)
+                self.stopActivityIndicator()
             }
         }
     }
@@ -80,12 +74,12 @@ class LoginViewController: UIViewController {
         loginManager.logIn(withPublishPermissions: [], from: self) { (result, error) in
             
             guard (error == nil) else {
-                self.Helper.displayError(self, UdacityClient.Messages.LoginError)
+                self.showAlert(self, UdacityClient.Messages.LoginError)
                 return
             }
             
             guard let _ = result?.token, let accessToken = FBSDKAccessToken.current().tokenString else {
-                self.Helper.displayError(self,UdacityClient.Messages.TokenError)
+                self.showAlert(self,UdacityClient.Messages.TokenError)
                 return
             }
             
@@ -96,17 +90,13 @@ class LoginViewController: UIViewController {
                 
                 if success {
                     self.loginSuccess()
-                    DispatchQueue.main.async {
-                        self.setUIEnabled(true)
-                        self.stopActivityIndicator()
-                    }
+                    self.setUIEnabled(true)
+                    self.stopActivityIndicator()
                 } else {
                     print(error!)
-                    DispatchQueue.main.async {
-                        self.Helper.displayError(self, UdacityClient.Messages.FacebookError)
-                        self.setUIEnabled(true)
-                        self.stopActivityIndicator()
-                    }
+                    self.showAlert(self, UdacityClient.Messages.FacebookError)
+                    self.setUIEnabled(true)
+                    self.stopActivityIndicator()
                 }
             }
         }
@@ -125,12 +115,14 @@ private extension LoginViewController {
     // MARK: Helpers
     
     func setUIEnabled(_ enabled: Bool) {
-        emailTextField.isEnabled = enabled
-        passwordTextField.isEnabled = enabled
-        loginButton.isEnabled = enabled
-        loginButton.alpha = enabled ? 1.0 : 0.5
-        loginFacebookButton.isEnabled = enabled
-        loginFacebookButton.alpha = enabled ? 1.0 : 0.5
+        DispatchQueue.main.async {
+            self.emailTextField.isEnabled = enabled
+            self.passwordTextField.isEnabled = enabled
+            self.loginButton.isEnabled = enabled
+            self.loginButton.alpha = enabled ? 1.0 : 0.5
+            self.loginFacebookButton.isEnabled = enabled
+            self.loginFacebookButton.alpha = enabled ? 1.0 : 0.5
+        }
     }
     
     func loginSuccess() {

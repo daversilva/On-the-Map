@@ -31,11 +31,10 @@ class StudentPostViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
     @IBAction func findLocation(_ sender: UIButton) {
 
         if location.text!.isEmpty || mediaUrl.text!.isEmpty {
-            ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.CompleteFields)
+            showAlert(self, StudentClient.Messages.CompleteFields)
             return
         }
         
@@ -44,18 +43,17 @@ class StudentPostViewController: UIViewController {
         
         getLocation { (sucess, error) in
             if sucess {
+                self.setUIEnabled(true)
+                self.stopActivityIndicator()
+                
                 DispatchQueue.main.async {
-                    self.setUIEnabled(true)
                     self.performSegue(withIdentifier: "segueAddLocation", sender: nil)
-                    self.stopActivityIndicator()
                 }
             } else {
                 print(error!)
-                DispatchQueue.main.async {
-                    self.setUIEnabled(true)
-                    self.stopActivityIndicator()
-                    ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.NotPossibleDisplayLocation)
-                }
+                self.setUIEnabled(true)
+                self.stopActivityIndicator()
+                self.showAlert(self, StudentClient.Messages.NotPossibleDisplayLocation)
             }
         }
     }
@@ -99,10 +97,12 @@ class StudentPostViewController: UIViewController {
 
 extension StudentPostViewController {
     func setUIEnabled(_ enabled: Bool) {
-        location.isEnabled = enabled
-        location.isEnabled = enabled
-        findLocationButton.isEnabled = enabled
-        findLocationButton.alpha = enabled ? 1.0 : 0.5
+        DispatchQueue.main.async {
+            self.location.isEnabled = enabled
+            self.location.isEnabled = enabled
+            self.findLocationButton.isEnabled = enabled
+            self.findLocationButton.alpha = enabled ? 1.0 : 0.5
+        }
     }
 }
 

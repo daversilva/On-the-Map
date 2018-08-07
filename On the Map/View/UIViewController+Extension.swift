@@ -8,29 +8,6 @@
 
 import UIKit
 
-class ViewHelper {
-    
-    open func displayError(_ view: UIViewController, _ errorString: String?) {
-        if let errorString = errorString {
-            let alert = UIAlertController(title: UdacityClient.Messages.OnTheMap, message: errorString, preferredStyle: .alert)
-            let action = UIAlertAction(title: UdacityClient.Messages.Dismiss, style: .default, handler: nil)
-            
-            alert.addAction(action)
-            
-            view.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    // MARK: Shared Instance
-    
-    class func sharedInstance() -> ViewHelper {
-        struct Singleton {
-            static var sharedInstance = ViewHelper()
-        }
-        return Singleton.sharedInstance
-    }
-}
-
 enum ViewTag: Int {
     case login = 1, studentTable, studentMapKit, studentTabBar, studentPost, studentPostMapKit
 }
@@ -61,6 +38,19 @@ extension UIViewController {
             if let activityIndicator = self.view.subviews.filter({ $0.tag == self.activityIndicatorTag }).first as? UIActivityIndicatorView {
                 activityIndicator.stopAnimating()
                 activityIndicator.removeFromSuperview()
+            }
+        }
+    }
+    
+    func showAlert(_ view: UIViewController, _ message: String?) {
+        DispatchQueue.main.async {
+            if let message = message {
+                let alert = UIAlertController(title: UdacityClient.Messages.OnTheMap, message: message, preferredStyle: .alert)
+                let action = UIAlertAction(title: UdacityClient.Messages.Dismiss, style: .default, handler: nil)
+                
+                alert.addAction(action)
+                
+                view.present(alert, animated: true, completion: nil)
             }
         }
     }

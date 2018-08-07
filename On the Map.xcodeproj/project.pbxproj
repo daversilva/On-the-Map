@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC522C2921176180007F7447 /* StudentArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC522C2821176180007F7447 /* StudentArray.swift */; };
-		BC543524211663AE00D5E051 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC543523211663AE00D5E051 /* ViewHelper.swift */; };
+		BC543524211663AE00D5E051 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC543523211663AE00D5E051 /* UIViewController+Extension.swift */; };
 		BC55724921114F73008B9B09 /* StudentMapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */; };
 		BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73BC3A2106BE92006C79B6 /* Reachability.swift */; };
 		BCA11FB52108ACC40084C698 /* LoginFacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */; };
@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		BC522C2821176180007F7447 /* StudentArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentArray.swift; sourceTree = "<group>"; };
-		BC543523211663AE00D5E051 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
+		BC543523211663AE00D5E051 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BC55724821114F73008B9B09 /* StudentMapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMapKitViewController.swift; sourceTree = "<group>"; };
 		BC73BC3A2106BE92006C79B6 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacebookButton.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 				BCA11FB42108ACC40084C698 /* LoginFacebookButton.swift */,
 				BCAF3E482112AF95000422F8 /* CommonAttributeButton.swift */,
 				BCF90D26210ACF5700974892 /* StudentTableViewCell.swift */,
-				BC543523211663AE00D5E051 /* ViewHelper.swift */,
+				BC543523211663AE00D5E051 /* UIViewController+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 				BCA7D3902114B53000CE6737 /* StudentPostMapKitViewController.swift in Sources */,
 				BCF90D27210ACF5700974892 /* StudentTableViewCell.swift in Sources */,
 				BCF447D321038B9A0004B540 /* UdacityClient.swift in Sources */,
-				BC543524211663AE00D5E051 /* ViewHelper.swift in Sources */,
+				BC543524211663AE00D5E051 /* UIViewController+Extension.swift in Sources */,
 				BCF90D1E210AC49E00974892 /* StudentConstants.swift in Sources */,
 				BC73BC3B2106BE92006C79B6 /* Reachability.swift in Sources */,
 				BCD9EFD02104D472007321A9 /* UdacityConvenience.swift in Sources */,
