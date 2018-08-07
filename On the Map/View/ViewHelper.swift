@@ -45,13 +45,13 @@ extension UIViewController {
         
         DispatchQueue.main.async {
             let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: style)
-            activityIndicator.tag = self.activityIndicatorTag
             
+            activityIndicator.tag = self.activityIndicatorTag
             activityIndicator.center = loc
             activityIndicator.color = UIColor(red: 0.0, green: 162.0/255.0, blue: 218.0/255, alpha: 1.0)
             activityIndicator.hidesWhenStopped = true
-            
             activityIndicator.startAnimating()
+            
             self.view.addSubview(activityIndicator)
         }
     }
@@ -59,7 +59,7 @@ extension UIViewController {
     func stopActivityIndicator() {
         DispatchQueue.main.async {
             if let activityIndicator = self.view.subviews.filter({ $0.tag == self.activityIndicatorTag }).first as? UIActivityIndicatorView {
-                activityIndicator.startAnimating()
+                activityIndicator.stopAnimating()
                 activityIndicator.removeFromSuperview()
             }
         }
