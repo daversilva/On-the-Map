@@ -54,7 +54,17 @@ extension StudentClient {
         var students = [StudentLocation]()
         
         for result in results {
-            students.append(StudentLocation(parse: result))
+            students.append(StudentLocation(objectId: result[StudentClient.JSONKeys.ObjectId] as? String ?? "",
+                                            uniqueKey: result[StudentClient.JSONKeys.UniqueKey] as? String ?? "",
+                                            firstName: result[StudentClient.JSONKeys.FirstName] as? String ?? "",
+                                            lastName: result[StudentClient.JSONKeys.LastName] as? String ?? "",
+                                            mapString: result[StudentClient.JSONKeys.MapString] as? String ?? "",
+                                            mediaURL: result[StudentClient.JSONKeys.MediaURL] as? String ?? "",
+                                            latitude: result[StudentClient.JSONKeys.Latitude] as? Double ?? 0.0,
+                                            longitude: result[StudentClient.JSONKeys.Longitude] as? Double ?? 0.0,
+                                            createdAt: result[StudentClient.JSONKeys.CreatedAt] as? String ?? "",
+                                            updatedAt: result[StudentClient.JSONKeys.UpdatedAt] as? String ?? ""
+                                            ))
         }
         
         return students
