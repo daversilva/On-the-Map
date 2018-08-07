@@ -57,17 +57,16 @@ class LoginViewController: UIViewController {
 
             if success {
                 self.loginSuccess()
+                DispatchQueue.main.async {
+                    self.setUIEnabled(true)
+                }
             } else {
                 print(error!)
-                ViewHelper.sharedInstance().activityIndicator.stopAnimating()
-                self.Helper.displayError(self, UdacityClient.Messages.EmailOrPasswordWrong)
-            }
-
-            DispatchQueue.main.async {
-                self.setUIEnabled(true)
-                self.emailTextField.text = ""
-                self.passwordTextField.text = ""
-                ViewHelper.sharedInstance().activityIndicator.startAnimating()
+                DispatchQueue.main.async {
+                    self.Helper.displayError(self, UdacityClient.Messages.EmailOrPasswordWrong)
+                    self.setUIEnabled(true)
+                    ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+                }
             }
         }
     }
@@ -96,19 +95,18 @@ class LoginViewController: UIViewController {
                 
                 if success {
                     self.loginSuccess()
+                    DispatchQueue.main.async {
+                        self.setUIEnabled(true)
+                    }
                 } else {
                     print(error!)
-                    self.Helper.displayError(self, UdacityClient.Messages.FacebookError)
-                }
-                
-                DispatchQueue.main.async {
-                    self.setUIEnabled(true)
-                    self.emailTextField.text = ""
-                    self.passwordTextField.text = ""
-                    ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+                    DispatchQueue.main.async {
+                        self.Helper.displayError(self, UdacityClient.Messages.FacebookError)
+                        self.setUIEnabled(true)
+                        ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+                    }
                 }
             }
-            
         }
     }
     

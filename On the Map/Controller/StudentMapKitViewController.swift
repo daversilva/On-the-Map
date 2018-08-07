@@ -20,13 +20,12 @@ class StudentMapKitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ViewHelper.sharedInstance().configureActivityIndicator(view)
+
         studentMap.delegate = self
         loadStudent()
-        
-        ViewHelper.sharedInstance().configureActivityIndicator(view)
-        ViewHelper.sharedInstance().activityIndicator.startAnimating()
     }
-
+    
     private func loadStudent() {
         StudentClient.sharedInstance().loadStudents() { (results, success, error) in
             if success {
@@ -100,9 +99,8 @@ extension StudentMapKitViewController: MKMapViewDelegate {
             }
         }
     }
-    
-    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+
+    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
         ViewHelper.sharedInstance().activityIndicator.stopAnimating()
     }
-
 }
