@@ -11,13 +11,13 @@ import UIKit
 class StudentTableViewController: UITableViewController {
     
     var students = StudentArray.sharedInstance().studentLocations
+    
+    override var activityIndicatorTag: Int { get { return ViewTag.studentTable.rawValue } }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ViewHelper.sharedInstance().configureActivityIndicator(view)
-        ViewHelper.sharedInstance().activityIndicator.startAnimating()
 
+        startActivityIndicator()
         loadStudent()
     }
     
@@ -45,7 +45,6 @@ class StudentTableViewController: UITableViewController {
     // MARK: - Table view data source
 
 extension StudentTableViewController {
-
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -86,7 +85,7 @@ extension StudentTableViewController {
         let cell: StudentTableViewCell = cell as! StudentTableViewCell
         
         if let text = cell.firstLastName.text, !text.isEmpty {
-            ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+            stopActivityIndicator()
         }
     }
     

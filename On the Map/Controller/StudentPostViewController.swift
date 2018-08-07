@@ -15,14 +15,14 @@ class StudentPostViewController: UIViewController {
     @IBOutlet weak var mediaUrl: UITextField!
     @IBOutlet weak var findLocationButton: BorderedButton!
     
+    override var activityIndicatorTag: Int { get { return ViewTag.studentPost.rawValue } }
+    
     var latitude = 0.0
     var longitude = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ViewHelper.sharedInstance().configureActivityIndicator(view)
-        
         location.delegate = self
         mediaUrl.delegate = self
     }
@@ -40,19 +40,20 @@ class StudentPostViewController: UIViewController {
         }
         
         setUIEnabled(false)
-        ViewHelper.sharedInstance().activityIndicator.startAnimating()
+        startActivityIndicator()
         
         getLocation { (sucess, error) in
             if sucess {
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
                     self.performSegue(withIdentifier: "segueAddLocation", sender: nil)
+                    self.stopActivityIndicator()
                 }
             } else {
                 print(error!)
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
-                    ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+                    self.stopActivityIndicator()
                     ViewHelper.sharedInstance().displayError(self, StudentClient.Messages.NotPossibleDisplayLocation)
                 }
             }

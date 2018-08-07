@@ -13,6 +13,8 @@ class StudentPostMapKitViewController: UIViewController {
 
     @IBOutlet weak var studentMapView: MKMapView!
     
+    override var activityIndicatorTag: Int { get { return ViewTag.studentPostMapKit.rawValue } }
+    
     let Helper = ViewHelper.sharedInstance()
     
     var mapString = ""
@@ -24,30 +26,29 @@ class StudentPostMapKitViewController: UIViewController {
         super.viewDidLoad()
         
         studentMapView.delegate = self
-        Helper.configureActivityIndicator(view)
         loadStudentLocationInMapView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //Helper.activityIndicator.startAnimating()
+        startActivityIndicator()
     }
     
     @IBAction func postNewLocation(_ sender: UIButton) {
         
         let location = Location(mapString: mapString, mediaURL: website, latitude: latitude, longitude: longitude)
-        Helper.activityIndicator.startAnimating()
+        startActivityIndicator()
         
         StudentClient.sharedInstance().postStudent(location: location) { (success, error) in
             if success {
                 DispatchQueue.main.async {
-                    self.Helper.activityIndicator.stopAnimating()
+                    self.stopActivityIndicator()
                     self.dismiss(animated: true, completion: nil)
                 }
             } else {
                 DispatchQueue.main.async {
                     self.Helper.displayError(self, StudentClient.Messages.UnablePostLocation)
-                    self.Helper.activityIndicator.stopAnimating()
+                    self.stopActivityIndicator()
                 }
             }
         }
@@ -92,6 +93,6 @@ extension StudentPostMapKitViewController: MKMapViewDelegate {
     }
     
     func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
-        Helper.activityIndicator.stopAnimating()
+        stopActivityIndicator()
     }
 }

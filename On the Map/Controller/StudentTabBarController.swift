@@ -15,11 +15,11 @@ class StudentTabBarController: UITabBarController, UITabBarControllerDelegate {
     @IBOutlet weak var addStudent: UIBarButtonItem!
     
     var students = StudentArray.sharedInstance().studentLocations
+    
+    override var activityIndicatorTag: Int { get { return ViewTag.studentTabBar.rawValue } }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        ViewHelper.sharedInstance().configureActivityIndicator(view)
     }
 
     @IBAction func logoutButton(_ sender: UIBarButtonItem) {
@@ -28,7 +28,7 @@ class StudentTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     @IBAction func refreshButton(_ sender: UIBarButtonItem) {
-        ViewHelper.sharedInstance().activityIndicator.startAnimating()
+        startActivityIndicator()
         setUIEnable(false)
         
         StudentClient.sharedInstance().loadStudents() { (results, success, error) in
@@ -45,7 +45,7 @@ class StudentTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
         
         setUIEnable(true)
-        ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+       stopActivityIndicator()
     }
     
     // MARK: Methods
@@ -63,7 +63,7 @@ class StudentTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func logoutFacebook() {
-        UdacityClient.sharedInstance().logoutSessionUdacity { (success, error) in
+        UdacityClient.sharedInstance().logoutSessionFacebook { (success, error) in
             if success {
                 DispatchQueue.main.async {
                     self.dismiss(animated: true, completion: nil)

@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: BorderedButton!
     @IBOutlet weak var loginFacebookButton: LoginFacebookButton!
     
+    override var activityIndicatorTag: Int { get { return ViewTag.login.rawValue } }
+    
     let Helper = ViewHelper.sharedInstance()
     
     // MARK: Reachability
@@ -28,8 +30,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Helper.configureActivityIndicator(view)
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
         }
 
         setUIEnabled(false)
-        ViewHelper.sharedInstance().activityIndicator.startAnimating()
+        startActivityIndicator()
 
         let credentials = UdacityCredential(username: emailTextField.text!, password: passwordTextField.text!)
 
@@ -59,13 +59,14 @@ class LoginViewController: UIViewController {
                 self.loginSuccess()
                 DispatchQueue.main.async {
                     self.setUIEnabled(true)
+                    self.stopActivityIndicator()
                 }
             } else {
                 print(error!)
                 DispatchQueue.main.async {
                     self.Helper.displayError(self, UdacityClient.Messages.EmailOrPasswordWrong)
                     self.setUIEnabled(true)
-                    ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+                    self.stopActivityIndicator()
                 }
             }
         }
@@ -89,7 +90,7 @@ class LoginViewController: UIViewController {
             }
             
             self.setUIEnabled(false)
-            ViewHelper.sharedInstance().activityIndicator.startAnimating()
+            self.startActivityIndicator()
             
             UdacityClient.sharedInstance().loginWithFacebook(accessToken) { (success, error) in
                 
@@ -97,13 +98,14 @@ class LoginViewController: UIViewController {
                     self.loginSuccess()
                     DispatchQueue.main.async {
                         self.setUIEnabled(true)
+                        self.stopActivityIndicator()
                     }
                 } else {
                     print(error!)
                     DispatchQueue.main.async {
                         self.Helper.displayError(self, UdacityClient.Messages.FacebookError)
                         self.setUIEnabled(true)
-                        ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+                        self.stopActivityIndicator()
                     }
                 }
             }

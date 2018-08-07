@@ -15,13 +15,13 @@ class StudentMapKitViewController: UIViewController {
     
     var annotations = [MKPointAnnotation]()
     
+    override var activityIndicatorTag: Int { get { return ViewTag.studentMapKit.rawValue } }
+    
     var students = StudentArray.sharedInstance().studentLocations
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ViewHelper.sharedInstance().configureActivityIndicator(view)
-
         studentMap.delegate = self
         loadStudent()
     }
@@ -99,8 +99,12 @@ extension StudentMapKitViewController: MKMapViewDelegate {
             }
         }
     }
+    
+    func mapViewWillStartLoadingMap(_ mapView: MKMapView) {
+        startActivityIndicator()
+    }
 
     func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
-        ViewHelper.sharedInstance().activityIndicator.stopAnimating()
+        stopActivityIndicator()
     }
 }
